@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/activity_add_bug_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <EditText
+                android:id="@+id/editText_symptoms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/请描述一下你的症状"
+                android:ems="10"
+                android:hint="@string/请描述一下你的症状"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/什么时候开始出现病状"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/button_choose_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:onClick="chooseTime"
+                android:text="@string/选择时间" />
+
+            <EditText
+                android:id="@+id/editText_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/no_thank_you"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine" />
+
+            <include layout="@layout/set_bug_property" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_add_virus_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@color/blue"
+        android:onClick="addBug"
+        android:text="@string/确认添加"
+        android:textSize="18sp" />
+</LinearLayout>
